@@ -4,7 +4,7 @@ Scripts para calcular la superficie efectivamente regada utilizando los datos de
 __'projects/ee-corfobbppciren2023/assets/Puntos_entrenamiento_Coquimbo/Puntos_Guatulame_25porciento_26516puntos_EPSG4326'__
 
 Geometría (SHAC) de entrenamiento alojada en _Google Earth Engine_:
-'projects/ee-corfobbppciren2023/assets/SHACS_Coquimbo/Guatulame'
+__'projects/ee-corfobbppciren2023/assets/SHACS_Coquimbo/Guatulame'__
 
 Geometría (SHAC) en la que calcular la superficie resultante alojada en _Google Earth Engine_:
 __'projects/ee-corfobbppciren2023/assets/SHACS_Coquimbo/'+SHAC__, 
