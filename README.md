@@ -14,7 +14,7 @@ Incluye _require_ al script __firstYear.js__ alojado en _Google Earth Engine_ (_
 
 Vector resultante se aloja en _Google Drive_, carpeta __'Areas Regadas Coquimbo'__.
 
-Utilizar también los scripts del repositorio __Areas_Regadas_Auxiliares__: __border_noise_correction.js__, __maskS2clouds.js__, __speckle_filter.js__, __terrain_flattening.js__, __utilities.js__ y __wrapper.js__.
+Utilizar también los scripts auxiliares del repositorio __Areas_Regadas_Auxiliares__: __border_noise_correction.js__, __maskS2clouds.js__, __speckle_filter.js__, __terrain_flattening.js__, __utilities.js__ y __wrapper.js__.
 
 Basado en el repositorio:
 __https://github.com/Yilkalg3/Irrigated-Area-Mapping__
