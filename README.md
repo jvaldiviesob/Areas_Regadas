@@ -1,6 +1,6 @@
 # Areas_Regadas
 
-Scripts para calcular la superficie efectivamente regada utilizando los datos de entrenamiento (Feature Collection) alojados en _Google Earth Engine_:
+Scripts para calcular la superficie efectivamente regada en _Google Earth Engine_ utilizando los datos de entrenamiento (Feature Collection) alojados en:
 __'projects/ee-corfobbppciren2023/assets/Puntos_entrenamiento_Coquimbo/Puntos_Guatulame_25porciento_26516puntos_EPSG4326'__
 
 Geometría (SHAC) de entrenamiento alojada en _Google Earth Engine_:
