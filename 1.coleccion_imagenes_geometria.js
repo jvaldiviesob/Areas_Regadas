@@ -3,7 +3,7 @@ var firstYear = require('users/corfobbppciren2023/firstYear:0.firstYear.js'),
     lista_SHACS = require('users/corfobbppciren2023/Areas_Regadas:-1.lista_SHACS.js');
 
 var SHAC = lista_SHACS.SHAC_62,
-    ruta ='projects/ee-corfobbppciren2023/assets/SHACS_Coquimbo/'+SHAC,
+    ruta ='projects/ee-corfobbppciren2023/assets/SHACS/'+SHAC,
     firstYear = ee.Number(firstYear.firstYear),
     firstYearsubtractone = firstYear.subtract(1),
     table1=ee.FeatureCollection('projects/ee-corfobbppciren2023/assets/SHACS/Maipo_Desembocadura'),
