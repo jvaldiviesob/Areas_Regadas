@@ -6,9 +6,9 @@ var SHAC = lista_SHACS.SHAC_62,
     ruta ='projects/ee-corfobbppciren2023/assets/SHACS_Coquimbo/'+SHAC,
     firstYear = ee.Number(firstYear.firstYear),
     firstYearsubtractone = firstYear.subtract(1),
-    table1=ee.FeatureCollection('projects/ee-corfobbppciren2023/assets/SHACS_Coquimbo/Guatulame'),
+    table1=ee.FeatureCollection('projects/ee-corfobbppciren2023/assets/SHACS/Maipo_Desembocadura'),
     table2=ee.FeatureCollection(ruta),
-    table3=ee.FeatureCollection('projects/ee-corfobbppciren2023/assets/Puntos_entrenamiento_Coquimbo/Puntos_Guatulame_25porciento_26516puntos_EPSG4326');
+    table3=ee.FeatureCollection('projects/ee-corfobbppciren2023/assets/Puntos_entrenamiento/puntos_SHACS_1_Maipo_Desembocadura_con_Clase_25porciento_ptos14797_2015_20216');
 
 // Set Dates - based on irrigation season
 var start = ee.String(ee.Number(firstYearsubtractone)).cat('-09-01'),
