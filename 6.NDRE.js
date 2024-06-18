@@ -4,10 +4,7 @@ var coleccion_imagenes_geometria=require('users/corfobbppciren2023/Areas_Regadas
     NDVI = require('users/corfobbppciren2023/Areas_Regadas:4.NDVI.js');
     
 var region_destino = coleccion_imagenes_geometria.region_destino,
-    region_entrenamiento = coleccion_imagenes_geometria.region_entrenamiento,
-    season = coleccion_imagenes_geometria.season,
-    firstYearsubtractone = ee.String(ee.Number(coleccion_imagenes_geometria.firstYearsubtractone)),
-    firstYear = ee.String(ee.Number(coleccion_imagenes_geometria.firstYear));
+    region_entrenamiento = coleccion_imagenes_geometria.region_entrenamiento;
 
 // NDRE (Normalized Difference Red Edge)
 var getNDRE = function(image) {
