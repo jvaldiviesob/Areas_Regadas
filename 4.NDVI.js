@@ -6,7 +6,7 @@ var coleccion_imagenes_geometria  = require('users/corfobbppciren2023/Areas_Rega
 var region_destino = coleccion_imagenes_geometria.region_destino,
     region_entrenamiento = coleccion_imagenes_geometria.region_entrenamiento,
     season = coleccion_imagenes_geometria.season,
-    firstYearsubtractone = ee.String(ee.Number(coleccion_imagenes_geometria.firstYearsubtractone)),
+    firstYearaddone = ee.String(ee.Number(coleccion_imagenes_geometria.firstYearaddone)),
     firstYear = ee.String(ee.Number(coleccion_imagenes_geometria.firstYear));
 
 // NDVI Function 
@@ -18,7 +18,7 @@ var getNDVI = function(image) {
 // Septiembre 
 var sentinel2_region_destino_sep = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYearsubtractone.cat('-09-01'),firstYearsubtractone.cat('-09-30'))
+    .filterDate(firstYear.cat('-09-01'),firstYear.cat('-09-30'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',50))
     .map(maskS2clouds.maskS2clouds);
     
@@ -27,7 +27,7 @@ var ndvi_region_destino_Sep = sentinel2_region_destino_sep.map(getNDVI).mean().c
 // Octubre 
 var sentinel2_region_destino_oct = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYearsubtractone.cat('-10-01'),firstYearsubtractone.cat('-10-31'))
+    .filterDate(firstYear.cat('-10-01'),firstYear.cat('-10-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',50))
     .map(maskS2clouds.maskS2clouds);
 
@@ -36,7 +36,7 @@ var ndvi_region_destino_Oct = sentinel2_region_destino_oct.map(getNDVI).mean().c
 // November 
 var sentinel2_region_destino_nov = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYearsubtractone.cat('-11-01'),firstYearsubtractone.cat('-11-30'))
+    .filterDate(firstYear.cat('-11-01'),firstYear.cat('-11-30'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
     .map(maskS2clouds.maskS2clouds);
 
@@ -45,7 +45,7 @@ var ndvi_region_destino_Nov = sentinel2_region_destino_nov.map(getNDVI).mean().c
 // December 
 var sentinel2_region_destino_dec = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYearsubtractone.cat('-12-01'),firstYearsubtractone.cat('-12-31'))
+    .filterDate(firstYear.cat('-12-01'),firstYear.cat('-12-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
     .map(maskS2clouds.maskS2clouds);
 
@@ -54,7 +54,7 @@ var ndvi_region_destino_Dec = sentinel2_region_destino_dec.map(getNDVI).mean().c
 // January 
 var sentinel2_region_destino_jan = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYear.cat('-01-01'),firstYear.cat('-01-31'))
+    .filterDate(firstYearaddone.cat('-01-01'),firstYearaddone.cat('-01-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
     .map(maskS2clouds.maskS2clouds);
 
@@ -63,7 +63,7 @@ var ndvi_region_destino_Jan = sentinel2_region_destino_jan.map(getNDVI).mean().c
 // February 
 var sentinel2_region_destino_feb = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYear.cat('-02-01'),firstYear.cat('-02-28'))
+    .filterDate(firstYearaddone.cat('-02-01'),firstYearaddone.cat('-02-28'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
     .map(maskS2clouds.maskS2clouds);
 
@@ -72,7 +72,7 @@ var ndvi_region_destino_Feb = sentinel2_region_destino_feb.map(getNDVI).mean().c
 // March 
 var sentinel2_region_destino_mar = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYear.cat('-03-01'),firstYear.cat('-03-31'))
+    .filterDate(firstYearaddone.cat('-03-01'),firstYearaddone.cat('-03-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
     .map(maskS2clouds.maskS2clouds);
 
@@ -81,7 +81,7 @@ var ndvi_region_destino_Mar = sentinel2_region_destino_mar.map(getNDVI).mean().c
 // April 
 var sentinel2_region_destino_apr = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYear.cat('-04-01'),firstYear.cat('-04-30'))
+    .filterDate(firstYearaddone.cat('-04-01'),firstYearaddone.cat('-04-30'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
     .map(maskS2clouds.maskS2clouds);
 
@@ -90,7 +90,7 @@ var ndvi_region_destino_Apr = sentinel2_region_destino_apr.map(getNDVI).mean().c
 // May 
 var sentinel2_region_destino_may = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_destino)
-    .filterDate(firstYear.cat('-05-01'),firstYear.cat('-05-31'))
+    .filterDate(firstYearaddone.cat('-05-01'),firstYearaddone.cat('-05-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
     .map(maskS2clouds.maskS2clouds);
 
@@ -113,7 +113,7 @@ var ndvi_region_destino = ndvi_region_destino_Sep
 // Septiembre 
 var sentinel2_region_entrenamiento_sep = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-      .filterDate(firstYearsubtractone.cat('-09-01'),firstYearsubtractone.cat('-09-30'))
+      .filterDate(firstYear.cat('-09-01'),firstYear.cat('-09-30'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
@@ -122,7 +122,7 @@ var ndvi_region_entrenamiento_Sep = sentinel2_region_entrenamiento_sep.map(getND
 // Octubre 
 var sentinel2_region_entrenamiento_oct = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-      .filterDate(firstYearsubtractone.cat('-10-01'),firstYearsubtractone.cat('-10-31'))
+      .filterDate(firstYear.cat('-10-01'),firstYear.cat('-10-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
@@ -131,7 +131,7 @@ var ndvi_region_entrenamiento_Oct = sentinel2_region_entrenamiento_oct.map(getND
 // November 
 var sentinel2_region_entrenamiento_nov = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-    .filterDate(firstYearsubtractone.cat('-11-01'),firstYearsubtractone.cat('-11-30'))
+    .filterDate(firstYear.cat('-11-01'),firstYear.cat('-11-30'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
@@ -140,7 +140,7 @@ var ndvi_region_entrenamiento_Nov = sentinel2_region_entrenamiento_nov.map(getND
 // December 
 var sentinel2_region_entrenamiento_dec = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-    .filterDate(firstYearsubtractone.cat('-12-01'),firstYearsubtractone.cat('-12-31'))
+    .filterDate(firstYear.cat('-12-01'),firstYear.cat('-12-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
@@ -158,7 +158,7 @@ var ndvi_region_entrenamiento_Jan = sentinel2_region_entrenamiento_jan.map(getND
 // February 
 var sentinel2_region_entrenamiento_feb = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-    .filterDate(firstYear.cat('-02-01'),firstYear.cat('-02-28'))
+    .filterDate(firstYearaddone.cat('-02-01'),firstYearaddone.cat('-02-28'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
@@ -167,7 +167,7 @@ var ndvi_region_entrenamiento_Feb = sentinel2_region_entrenamiento_feb.map(getND
 // March 
 var sentinel2_region_entrenamiento_mar = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-    .filterDate(firstYear.cat('-03-01'),firstYear.cat('-03-31'))
+    .filterDate(firstYearaddone.cat('-03-01'),firstYearaddone.cat('-03-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
@@ -176,7 +176,7 @@ var ndvi_region_entrenamiento_Mar = sentinel2_region_entrenamiento_mar.map(getND
 // April 
 var sentinel2_region_entrenamiento_apr = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-    .filterDate(firstYear.cat('-04-01'),firstYear.cat('-04-30'))
+    .filterDate(firstYearaddone.cat('-04-01'),firstYearaddone.cat('-04-30'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
@@ -185,7 +185,7 @@ var ndvi_region_entrenamiento_Apr = sentinel2_region_entrenamiento_apr.map(getND
 // May 
 var sentinel2_region_entrenamiento_may = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
     .filterBounds(region_entrenamiento)
-    .filterDate(firstYear.cat('-05-01'),firstYear.cat('-05-31'))
+    .filterDate(firstYearaddone.cat('-05-01'),firstYearaddone.cat('-05-31'))
     //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20));
     .map(maskS2clouds.maskS2clouds);
     
