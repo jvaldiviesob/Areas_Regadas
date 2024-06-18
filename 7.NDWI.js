@@ -4,9 +4,7 @@ var coleccion_imagenes_geometria=require('users/corfobbppciren2023/Areas_Regadas
     
 var region_destino = coleccion_imagenes_geometria.region_destino,
     region_entrenamiento = coleccion_imagenes_geometria.region_entrenamiento,
-    season = coleccion_imagenes_geometria.season,
-    firstYearsubtractone = ee.String(ee.Number(coleccion_imagenes_geometria.firstYearsubtractone)),
-    firstYear = ee.String(ee.Number(coleccion_imagenes_geometria.firstYear));
+    season = coleccion_imagenes_geometria.season;
 
 // NDWI (Normalized Difference Wetness Index)
 var getNDWI = function(image) {
