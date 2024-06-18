@@ -37,6 +37,23 @@ var sample = sentinel_vi_region_entrenamiento.sampleRegions(
     {'collection': ee.FeatureCollection(coleccion_imagenes_geometria.trainingGcp), 'properties': [label], 'scale': 50}
 );
 
+//print(sample.first());
+
+//print(sample.size().getInfo())
+
+// Añadir una columna de números aleatorios a la colección
+var sample = sample.randomColumn('random');
+
+// Especificar la fracción de la colección que deseas seleccionar
+var fraction = 0.6;
+
+// Filtrar la colección para obtener una submuestra
+var sample = sample.filter(ee.Filter.lt('random', fraction));
+
+//print(sample.first());
+
+//print(sample.size().getInfo())
+
 //print('sentinel_vi_region_destino',sentinel_vi_region_destino);
 //print('sentinel_vi_region_destino',sentinel_vi_region_destino);
 //print('sentinel_vi_region_destino_size',sentinel_vi_region_destino.select(['B2']));
@@ -46,10 +63,6 @@ var sample = sentinel_vi_region_entrenamiento.sampleRegions(
 //print('coleccion_imagenes_geometria.trainingGcp',coleccion_imagenes_geometria.trainingGcp.first());
 //print('sample.first()',sample.first());
 
-//Map.addLayer(region_destino);
-//Map.addLayer(region_entrenamiento);
-//Map.addLayer(sentinel_vi_region_destino.select(['ndwiSep']));
-//Map.addLayer(sentinel_vi_region_entrenamiento.select(['ndwiSep']));
 
 exports.sample_ = sample;
 exports.label = label;
